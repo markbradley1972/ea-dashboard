@@ -1,0 +1,26 @@
+{
+  "accounts": {
+    "2103": {
+      "strategy": "Gold_Scalp_C",
+      "magic": 2103,
+      "broker": "Vantage Markets",
+      "net_pnl": 898.26,
+      "growth": 89.83,
+      "pf": 10.04,
+      "wr": 84.2,
+      "trades": 19,
+      "status": "carrying"
+    },
+    "2102": {
+      "strategy": "ScalpH1_B",
+      "magic": 2102,
+      "broker": "Vantage Markets",
+      "net_pnl": -451.31,
+      "growth": -45.13,
+      "pf": 0.50,
+      "wr": 47.7,
+      "trades": 44,
+      "status": "holding_back"
+    }
+  }
+}
