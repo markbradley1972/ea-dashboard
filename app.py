@@ -7,8 +7,8 @@ from supabase import create_client, Client
 st.set_page_config(page_title="T-HOUSE CAPITAL Portfolio Dashboard", layout="wide")
 
 # Connect to Supabase (Replace with your actual Supabase URL and Anon Key)
-SUPABASE_URL = "YOUR_SUPABASE_URL"
-SUPABASE_KEY = "YOUR_SUPABASE_ANON_KEY"
+SUPABASE_URL = "https://rlfgzxmgzfiqrafblwgr.supabase.co/rest/v1/"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZmd6eG1nemZpcXJhZmJsd2dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgxODM5MjgsImV4cCI6MjEwMzc1OTkyOH0.s3EzgC0P6bI6NmBFhwbWPgE7KSjsl9Z9P7mx3y8XJOo"
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 @st.cache_data(ttl=5)
