@@ -1,20 +1,23 @@
-import streamlit as pd
-import streamlit as st
 import pandas as pd
+import streamlit as st
 from supabase import create_client, Client
 
 # Page Setup
 st.set_page_config(page_title="T-HOUSE CAPITAL Portfolio Dashboard", layout="wide")
 
-# Connect to Supabase (Replace with your actual Supabase URL and Anon Key)
+# Connect to Supabase
 SUPABASE_URL = "https://rlfgzxmgzfiqrafblwgr.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZmd6eG1nemZpcXJhZmJsd2dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgxODM5MjgsImV4cCI6MjEwMzc1OTkyOH0.s3EzgC0P6bI6NmBFhwbWPgE7KSjsl9Z9P7mx3y8XJOo"
+
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 @st.cache_data(ttl=5)
 def fetch_live_data():
-    response = supabase.table("portfolio_updates").select("*").execute()
-    return pd.DataFrame(response.data)
+    try:
+        response = supabase.table("portfolio_updates").select("*").execute()
+        return pd.DataFrame(response.data)
+    except Exception as e:
+        return pd.DataFrame()
 
 df = fetch_live_data()
 
